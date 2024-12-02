@@ -32,6 +32,10 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
       },
+      {
+        test: /\.ejs$/,
+        use: [{ loader: 'ejs-loader', options: { esModule: false } }]
+      }
     ],
   },
 };

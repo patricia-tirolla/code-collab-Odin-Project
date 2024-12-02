@@ -32,6 +32,9 @@ export const productList = (containerId, templateId) => {
       const productImage = clone.querySelector(".product-image");
       productImage.setAttribute("src", product.image);
 
+      const productLink = clone.querySelector(".product-link");
+      productLink.href = "#/products/" + product.id;
+
       const productTitle = clone.querySelector(".product-title");
       productTitle.textContent = product.title;
 
