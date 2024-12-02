@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --color-lt-gray: #f1f2f2;
+  --color-dk-gray: #54595f;
+  --color-white: #fafafa;
+  --color-nude: #c19a83;
+  --font-main: "Oswald", serif;
+}
+
+body {
+  background-color: var(--color-white);
+  font-family: var(--font-main);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.home-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-section a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: black;
+}
+
+#page-container {
+  display: grid;
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.title-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  padding: 30px 0;
+}
+
+.title-wrapper p {
+  font-weight: 300;
+  color: var(--color-dk-gray);
+  font-size: 0.8rem;
+}
+
+.title-wrapper h1 {
+  font-size: 1.5rem;
+
+}
+
+.title-wrapper span {
+  width: 50px;
+  border-bottom: solid 1px var(--color-nude);
+  padding-top: 20px;
+}
+
+#product-container {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  justify-content: center;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  background-color: var(--color-lt-gray);
+  padding: 15px 10px;
+  word-wrap: break-word;
+
+}
+
+.product-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+.product-image {
+  width: 80%;
+  height: 200px;
+  object-fit: contain;
+}
+
+.info-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  text-align: center;
+  gap: 15px;
+}
+
+.product-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  max-width: 100%;
+}
+
+.product-price {
+  color: var(--color-dk-gray);
+}
+
+@media (max-width: 767px) {
+  #product-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .info-wrapper {
+    text-align: left;
+  }
+}
+
+@media (max-width: 1023px) {
+  .info-wrapper {
+    text-align: left;
+  }
+}

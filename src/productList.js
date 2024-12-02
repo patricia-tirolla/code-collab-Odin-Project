@@ -1,3 +1,4 @@
+import "./productList.css"
 
 
 export const productList = (containerId, templateId) => {
@@ -19,6 +20,13 @@ export const productList = (containerId, templateId) => {
     return num.toFixed(2);
   };
 
+  const formatLength = (str) => {
+    if (str.length <= 100) {
+      return str
+    } else {
+    return str.slice(0, 100) + "..."
+  }}
+  
   const displayData = async (url) => {
     const productSection = document.getElementById(containerId);
 
@@ -39,10 +47,11 @@ export const productList = (containerId, templateId) => {
       productTitle.textContent = product.title;
 
       const productDescription = clone.querySelector(".product-description");
-      productDescription.textContent = product.description;
+      const description = product.description;
+      const truncatedString = formatLength(description)
+      productDescription.textContent = truncatedString
 
       const productPrice = clone.querySelector(".product-price");
-
       const number = product.price;
       const formattedPrice = formatPrice(number);
 
