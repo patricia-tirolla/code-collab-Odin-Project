@@ -5,7 +5,7 @@
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.3",
     "style-loader": "^4.0.0",
-    "webpack": "^5.96.1",
+    "webpack": "^5.97.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.1.0"
   },
@@ -16,5 +16,12 @@
   },
   "dependencies": {
     "ejs": "^3.1.10"
-  }
+  },
+  "name": "code-collab-aa1",
+  "version": "1.0.0",
+  "description": "### Project's naming conventions: ``` HTML - kebab-case CSS - kebab-case JS - camelCase ```",
+  "main": "webpack.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
