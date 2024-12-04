@@ -1,6 +1,5 @@
 import "./productList.css"
 
-
 export const productList = (containerId, templateId) => {
   const fetchData = async (url) => {
     try {

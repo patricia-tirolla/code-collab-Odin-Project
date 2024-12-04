@@ -1,0 +1,22 @@
+<%= partials.header() %>
+<section class="product-detail-body">
+    <a href="/">Home</a>
+    <h1>Product Description</h1>
+
+    <div class="product-detail-container">
+        <img class=".product-detail-image" src="<%= product.image %>" alt="product image" width="250px">
+        <div class="product-detail-info-wrapper">
+            <p class="product-title">
+                <%= product.title %>
+            </p>
+            <p class="product-description product-detail-description">
+                <%= product.description %>
+            </p>
+            <p class="product-details-price product-price">
+                <%= "$" + formatPrice(product.price) %>
+            </p>
+        </div>
+
+        <button class="add-to-cart-button">Add to cart</button>
+    </div>
+</section>

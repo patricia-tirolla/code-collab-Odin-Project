@@ -1,8 +1,12 @@
 import "./styles.css";
+import "./styles/productDetails.css"
+
+import homeTemplate from "./template/home.ejs";
+import cartTemplate from "./template/cart.ejs";
+
 import { productList } from "./productList";
-import homePage from "./pages/home.ejs";
-import detailsPage from "./pages/productDetails.ejs"
-import cartPage from "./pages/cart.ejs";
+import productPage from "./page/productsPage";
+import partials from "./partials";
 
 const createProductList = productList(
     "product-container",
@@ -16,25 +20,13 @@ window.addEventListener("popstate", () => {
 
 function renderPage(urlPath) {
     if (urlPath == "#/cart-page") {
-        document.querySelector("body").innerHTML = cartPage();
+        document.querySelector("body").innerHTML = cartTemplate();
 
     } else if (urlPath.startsWith("#/products/")) {
-        let productId = urlPath.substring("#/products/".length)
-
-        fetch('https://fakestoreapi.com/products/' + productId)
-            .then(res => res.json())
-            .then(json => {
-                console.log(json)
-                document.querySelector("body").innerHTML = detailsPage({ product: json });
-            })
+        productPage.renderProduct(urlPath);
     } else {
-
-        fetch('https://fakestoreapi.com/products')
-            .then(res => res.json())
-            .then(json => {
-                document.querySelector("body").innerHTML = homePage({ products: json });
-                createProductList.displayData("https://fakestoreapi.com/products?limit=20");
-            })
+        document.querySelector("body").innerHTML = homeTemplate({ partials });
+        createProductList.displayData("https://fakestoreapi.com/products?limit=20");
     }
 }
 renderPage(window.location.hash);
