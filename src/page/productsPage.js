@@ -1,4 +1,4 @@
-import detailsPage from "../template/product.ejs";
+import productTemplate from "../template/product.ejs";
 import partials from "../partials"
 import { addProductToShoppingCart } from "./shoppingCartPage";
 
@@ -7,7 +7,7 @@ async function renderProduct(urlPath) {
     let res = await fetch('https://fakestoreapi.com/products/' + productId);
     let json = await res.json();
 
-    document.querySelector("body").innerHTML = detailsPage({
+    document.querySelector("body").innerHTML = productTemplate({
         product: json,
         formatPrice: formatPrice,
         partials
