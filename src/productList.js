@@ -1,6 +1,8 @@
 import "./productList.css"
 
 export const productList = (containerId, templateId) => {
+  
+
   const fetchData = async (url) => {
     try {
       const response = await fetch(url);
@@ -21,13 +23,20 @@ export const productList = (containerId, templateId) => {
 
   const formatLength = (str) => {
     if (str.length <= 100) {
-      return str
+      return str;
     } else {
-    return str.slice(0, 100) + "..."
-  }}
-  
+      return str.slice(0, 100) + "...";
+    }
+  };
+
+  const handleAddButtonClick = (event) => {
+event.preventDefault()
+
+console.log("item added to cart")
+  }
   const displayData = async (url) => {
     const productSection = document.getElementById(containerId);
+
 
     const data = await fetchData(url);
     console.log("data from fetch:", data);
@@ -47,8 +56,8 @@ export const productList = (containerId, templateId) => {
 
       const productDescription = clone.querySelector(".product-description");
       const description = product.description;
-      const truncatedString = formatLength(description)
-      productDescription.textContent = truncatedString
+      const truncatedString = formatLength(description);
+      productDescription.textContent = truncatedString;
 
       const productPrice = clone.querySelector(".product-price");
       const number = product.price;
@@ -56,9 +65,19 @@ export const productList = (containerId, templateId) => {
 
       productPrice.textContent = `$${formattedPrice}`;
 
+      const addButton = clone.querySelector(".add-button");
+      addButton.textContent = addButton.textContent.toUpperCase();
+
+      addButton.addEventListener("click", handleAddButtonClick)
+
       productSection.appendChild(clone);
     });
   };
+
+
+
+
+  
 
   return {
     displayData,

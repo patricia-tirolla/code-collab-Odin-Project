@@ -62,7 +62,6 @@ body {
 
 .title-wrapper h1 {
   font-size: 1.5rem;
-
 }
 
 .title-wrapper span {
@@ -87,7 +86,6 @@ body {
   background-color: var(--color-lt-gray);
   padding: 15px 10px;
   word-wrap: break-word;
-
 }
 
 .product-link {
@@ -110,6 +108,7 @@ body {
   justify-content: start;
   text-align: center;
   gap: 15px;
+  padding-bottom: 40px;
 }
 
 .product-title {
@@ -122,6 +121,16 @@ body {
   color: var(--color-dk-gray);
 }
 
+.add-button {
+  margin-top: auto;
+  width: fit-content;
+  border: none;
+  background-color: var(--color-dk-gray);
+  color: white;
+  align-self: center;
+  padding: 10px 20px;
+
+}
 @media (max-width: 767px) {
   #product-container {
     grid-template-columns: repeat(2, minmax(0, 1fr));
