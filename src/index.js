@@ -2,7 +2,6 @@ import "./styles.css";
 import "./style/footer.css";
 import "./style/productDetails.css";
 
-
 import { productList } from "./productList";
 import productsPage from "./page/productsPage";
 
@@ -11,9 +10,6 @@ import cartTemplate from "./template/cart.ejs";
 
 import partials from "./partials";
 import images from "./images";
-
-
-
 
 const createProductList = productList(
     "product-container",
