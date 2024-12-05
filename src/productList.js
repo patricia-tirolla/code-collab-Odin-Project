@@ -1,21 +1,33 @@
-import "./productList.css"
+import "./productList.css";
+
+export const fetchData = async (url) => {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error("Failed to fetch data");
+    }
+    const data = await response.json();
+    console.log("json data:", data);
+    return data;
+  } catch (error) {
+    console.error("Error fetching data:", error.message);
+  }
+};
 
 export const productList = (containerId, templateId) => {
-  
-
-  const fetchData = async (url) => {
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error("Failed to fetch data");
-      }
-      const data = await response.json();
-      console.log("json data:", data);
-      return data;
-    } catch (error) {
-      console.error("Error fetching data:", error.message);
-    }
-  };
+  // const fetchData = async (url) => {
+  //   try {
+  //     const response = await fetch(url);
+  //     if (!response.ok) {
+  //       throw new Error("Failed to fetch data");
+  //     }
+  //     const data = await response.json();
+  //     console.log("json data:", data);
+  //     return data;
+  //   } catch (error) {
+  //     console.error("Error fetching data:", error.message);
+  //   }
+  // };
 
   const formatPrice = (num) => {
     return num.toFixed(2);
@@ -30,13 +42,12 @@ export const productList = (containerId, templateId) => {
   };
 
   const handleAddButtonClick = (event) => {
-event.preventDefault()
+    event.preventDefault();
 
-console.log("item added to cart")
-  }
+    console.log("item added to cart");
+  };
   const displayData = async (url) => {
     const productSection = document.getElementById(containerId);
-
 
     const data = await fetchData(url);
     console.log("data from fetch:", data);
@@ -68,19 +79,14 @@ console.log("item added to cart")
       const addButton = clone.querySelector(".add-button");
       addButton.textContent = addButton.textContent.toUpperCase();
 
-      addButton.addEventListener("click", handleAddButtonClick)
+      addButton.addEventListener("click", handleAddButtonClick);
 
       productSection.appendChild(clone);
     });
   };
 
-
-
-
-  
-
   return {
     displayData,
-    fetchData
+    fetchData,
   };
 };
