@@ -4,6 +4,7 @@ import "./style/productDetails.css";
 
 import { productList } from "./productList";
 import productsPage from "./page/productsPage";
+import { getCartFromLocalStorage } from "./page/shoppingCartPage";
 
 import homeTemplate from "./template/home.ejs";
 import cartTemplate from "./template/cart.ejs";
@@ -23,7 +24,7 @@ window.addEventListener("popstate", () => {
 
 function renderPage(urlPath) {
     if (urlPath == "#/cart-page") {
-        document.querySelector("body").innerHTML = cartTemplate();
+        document.querySelector("body").innerHTML = cartTemplate({cart: getCartFromLocalStorage(), subtotal: 10, total: 20});
 
     } else if (urlPath.startsWith("#/products/")) {
         productsPage.renderProduct(urlPath);

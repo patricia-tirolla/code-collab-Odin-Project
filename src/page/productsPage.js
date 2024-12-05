@@ -9,10 +9,10 @@ async function renderProduct(urlPath) {
 
     document.querySelector("body").innerHTML = productTemplate({
         product: json,
-        formatPrice: formatPrice,
+        formatPrice,
         partials
     });
-    buttonAddToShoppingCart(json.id);
+    buttonAddToShoppingCart(json);
 }
 
 export default { renderProduct: renderProduct }
@@ -21,9 +21,9 @@ function formatPrice(num) {
     return num.toFixed(2)
 }
 
-function buttonAddToShoppingCart(productId) {
+function buttonAddToShoppingCart(product) {
     const addToCartButton = document.querySelector(".add-to-cart-button");
     addToCartButton.addEventListener("click", () => {
-        addProductToShoppingCart(productId);
+        addProductToShoppingCart(product);
     })
 }
