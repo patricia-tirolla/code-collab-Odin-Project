@@ -81,5 +81,6 @@ console.log("item added to cart")
 
   return {
     displayData,
+    fetchData
   };
 };

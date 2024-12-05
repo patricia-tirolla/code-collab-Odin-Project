@@ -12,9 +12,6 @@ import cartTemplate from "./template/cart.ejs";
 import partials from "./partials";
 import images from "./images";
 
-
-
-
 const createProductList = productList(
     "product-container",
     "product-list-template"
@@ -33,7 +30,7 @@ function renderPage(urlPath) {
         productsPage.renderProduct(urlPath);
 
     } else {
-        document.querySelector("body").innerHTML = homeTemplate({ partials, images });
+        document.querySelector("body").innerHTML = homeTemplate({ partials, images, productList });
         createProductList.displayData("https://fakestoreapi.com/products?limit=20");
     }
 }

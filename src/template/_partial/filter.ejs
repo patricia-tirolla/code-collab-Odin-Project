@@ -1,0 +1,31 @@
+
+<div class="filter-container">
+  <!-- Category Buttons -->
+  <% const categories = [...new Set(products.map(product => product.category))]; %>
+  <% categories.forEach(category => { %>
+    <button 
+      class="filter-button" 
+      data-category="<%= category %>"
+      onclick="handleCategoryClick('<%= category %>')">
+      <%= category.charAt(0).toUpperCase() + category.slice(1) %>
+    </button>
+  <% }); %>
+
+  <!-- Sort Dropdown -->
+  <select id="sort-select" onchange="onFilterChange()">
+    <option value="default">Default</option>
+    <option value="price-asc">Price: Low to High</option>
+    <option value="price-desc">Price: High to Low</option>
+  </select>
+
+  <!-- Price Range Slider -->
+  <% const maxPrice = Math.ceil(Math.max(...products.map(p => p.price))); %>
+  <input 
+    type="range" 
+    id="price-range" 
+    min="0" 
+    max="<%= maxPrice %>" 
+    value="<%= maxPrice %>" 
+    oninput="updatePriceValue(this.value); onFilterChange();" />
+  <span id="price-value">$<%= maxPrice %></span>
+</div>
