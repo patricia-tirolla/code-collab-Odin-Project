@@ -1,8 +1,7 @@
 import "./styles.css";
-import "./style/footer.css"
+import "./style/footer.css";
+import "./style/productDetails.css";
 
-import img from "./img/credit-card.png" 
-console.log(img)
 
 import { productList } from "./productList";
 import productsPage from "./page/productsPage";
@@ -34,13 +33,8 @@ function renderPage(urlPath) {
         productsPage.renderProduct(urlPath);
 
     } else {
-
-        fetch('https://fakestoreapi.com/products')
-            .then(res => res.json())
-            .then(json => {
-                document.querySelector("body").innerHTML = homeTemplate({ partials, images });
-                createProductList.displayData("https://fakestoreapi.com/products?limit=20");
-            })
+        document.querySelector("body").innerHTML = homeTemplate({ partials, images });
+        createProductList.displayData("https://fakestoreapi.com/products?limit=20");
     }
 }
 renderPage(window.location.hash);
