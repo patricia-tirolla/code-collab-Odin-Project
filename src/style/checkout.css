@@ -1,0 +1,126 @@
+.checkout-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1, h2 {
+    color: #333;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  h2 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .two-column-layout {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .customer-info,
+  .order-summary {
+    flex: 1; /* Each section takes equal space */
+    margin-right: 20px; /* Add space between columns */
+  }
+  
+  .customer-info:last-child,
+  .order-summary:first-child {
+    margin-right: 0; /* Remove right margin from last column */
+  }
+  
+  section {
+    margin-bottom: 30px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input[type='text'],
+  input[type='email'],
+  input[type='tel'],
+  select,
+  textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  textarea {
+    height: auto; /* Adjust height if necessary */
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th,
+  td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f8f8f8;
+  }
+  
+  tfoot td {
+    font-weight: bold;
+  }
+  
+  input[type='radio'] {
+    margin-right: 10px;
+  }
+  
+  button[type='submit'] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size:16px; 
+     transition: background-color .3s; 
+  }
+  
+  button[type='submit']:hover {
+     background-color:#45a049; 
+  }
+  
+  /* Responsive design */
+  @media (max-width:600px) {
+     .two-column-layout { 
+         flex-direction: column; 
+     }
+     .customer-info,
+     .order-summary { 
+         margin-right :0; 
+         margin-bottom :20px; 
+     }
+     input[type='text'], 
+     input[type='email'], 
+     input[type='tel'], 
+     select, 
+     textarea { 
+         font-size :16px; /* Prevents zoom on mobile */ 
+     } 
+  }
