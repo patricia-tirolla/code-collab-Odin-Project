@@ -1,0 +1,102 @@
+
+<div class="checkout-container">
+    <h1>Checkout</h1>
+    <form action="/submit-order" method="POST">
+      <!-- Customer Information -->
+      <section>
+        <h2>Customer Information</h2>
+        <label for="email">Username or Email Address *</label>
+        <input type="email" id="email" name="email" placeholder="youremail@example.com" required>
+      </section>
+
+      <!-- Billing Details -->
+      <section>
+        <h2>Billing Details</h2>
+        <label for="first-name">First Name *</label>
+        <input type="text" id="first-name" name="firstName" placeholder="First Name" required>
+
+        <label for="last-name">Last Name *</label>
+        <input type="text" id="last-name" name="lastName" placeholder="Last Name" required>
+
+        <label for="company-name">Company Name (optional)</label>
+        <input type="text" id="company-name" name="companyName" placeholder="Company Name">
+
+        <label for="country">Country / Region *</label>
+        <select id="country" name="country" required>
+          <option value="Sweden">Sweden</option>
+          <!-- Add more countries here -->
+        </select>
+
+        <label for="street-address">Street Address *</label>
+        <input type="text" id="street-address" name="streetAddress" placeholder="Street Address" required>
+
+        <label for="apartment">Apartment, suite, unit, etc. (optional)</label>
+        <input type="text" id="apartment" name="apartment" placeholder="Apartment, suite, unit, etc.">
+
+        <label for="postcode">Postcode / ZIP *</label>
+        <input type="text" id="postcode" name="postcode" placeholder="ZIP Code" required>
+
+        <label for="city">Town / City *</label>
+        <input type="text" id="city" name="city" placeholder="City" required>
+
+        <label for="phone">Phone *</label>
+        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+      </section>
+
+      <!-- Additional Information -->
+      <section>
+        <h2>Additional Information</h2>
+        <label for="notes">Order Notes (optional)</label>
+        <textarea id="notes" name="notes" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+      </section>
+
+      <!-- Order Summary -->
+      <section>
+        <h2>Your Order</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% cart.forEach(item => { %>
+              <tr>
+                <td><%= item.name %> - <%= item.quantity %></td>
+                <td>$<%= item.price * item.quantity %></td>
+              </tr>
+            <% }); %>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Subtotal</td>
+              <td>$<%= cart.reduce((total, item) => total + (item.price * item.quantity), 0) %></td>
+            </tr>
+            <tr>
+              <td>Total</td>
+              <td>$<%= cart.reduce((total, item) => total + (item.price * item.quantity), 0) %></td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+
+      <!-- Payment -->
+      <section>
+        <h2>Payment</h2>
+        <div>
+          <input type="radio" id="bank-transfer" name="paymentMethod" value="bank-transfer" checked>
+          <label for="bank-transfer">Direct Bank Transfer</label>
+          <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
+        </div>
+        <div>
+          <input type="radio" id="cash-on-delivery" name="paymentMethod" value="cash-on-delivery">
+          <label for="cash-on-delivery">Cash on Delivery</label>
+        </div>
+      </section>
+
+      <!-- Submit Button -->
+      <button type="submit">Place Order $<%= cart.reduce((total, item) => total + (item.price * item.quantity), 0) %></button>
+    </form>
+  </div>
+
