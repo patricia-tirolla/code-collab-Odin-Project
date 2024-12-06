@@ -1,33 +1,33 @@
-<%= partials.header() %>
+<%= partials.header() %> <%= partials.navbar() %>
 
 <div class="home-section container">
-    <h1>home</h1>
-    <a href="#/cart-page">Cart</a>
+  <h1>home</h1>
+  <a href="#/cart-page">Cart</a>
 </div>
 
 <section id="page-container" class="container">
-    <div class="title-wrapper">
-        <p>Shop by all products</p>
-        <h1>All products</h1>
-        <span></span>
-    </div>
-    <div id="product-container"></div>
-    <p>This is the filter section</p>
+  <div class="title-wrapper">
+    <p>Shop by all products</p>
+    <h1>All products</h1>
+    <span></span>
+  </div>
+  <div id="product-container"></div>
+  <p>This is the filter section</p>
 </section>
 
 <%= partials.footer({images}) %>
 
 <!-- Start PRODUCT LIST SECTION -->
 <template id="product-list-template">
-    <div class="product-card">
-        <a class="product-link">
-            <img class="product-image" src="#" alt="product image" width="200px" />
-        </a>
-        <div class="info-wrapper">
-            <p class="product-title">title</p>
-            <p class="product-description">description</p>
-            <p class="product-price">price</p>
-        </div>
-        <button class="add-button">Add to cart</button>
+  <div class="product-card">
+    <a class="product-link">
+      <img class="product-image" src="#" alt="product image" width="200px" />
+    </a>
+    <div class="info-wrapper">
+      <p class="product-title">title</p>
+      <p class="product-description">description</p>
+      <p class="product-price">price</p>
     </div>
+    <button class="add-button">Add to cart</button>
+  </div>
 </template>
