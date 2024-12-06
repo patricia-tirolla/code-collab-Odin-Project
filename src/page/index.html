@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="../style/shoppingCartPage.css">
+</head>
+<body>
+  <div class="container">
+    
+    <h1 class="cart-heading">Cart</h1>
+    <div class="cart">
+      <div class="cart-header">
+        <div class="header-product">Product</div>
+        <div class="header-price">Price</div>
+        <div class="header-quantity">Quantity</div>
+        <div class="header-subtotal">Subtotal</div>
+      </div>
+      <div class="cart-items">
+        
+      </div>
+    </div>
+
+    
+    <div class="cart-totals">
+      <h2>Cart Totals</h2>
+      <div class="totals">
+        <p>Subtotal: <span class="totals-subtotal">$0.00</span></p>
+        <p>Total: <span class="totals-total">$0.00</span></p>
+        <div class="coupon-section">
+          <label for="coupon">Have a coupon?</label>
+          <input type="text" id="coupon" placeholder="Enter coupon code">
+          <button class="apply-coupon">Apply</button>
+        </div>
+        <button class="checkout-button">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./shoppingCartPage.js"></script>
+</body>
+</html>
