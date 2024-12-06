@@ -1,10 +1,12 @@
 import "./styles.css";
 import "./style/footer.css";
 import "./style/productDetails.css";
+import "./style/shoppingCartPage.css"
 
 
 import { productList } from "./productList";
 import productsPage from "./page/productsPage";
+import { getCartFromLocalStorage, updateCartTotals } from "./page/shoppingCartPage";
 
 import homeTemplate from "./template/home.ejs";
 import cartTemplate from "./template/cart.ejs";
@@ -27,7 +29,7 @@ window.addEventListener("popstate", () => {
 
 function renderPage(urlPath) {
     if (urlPath == "#/cart-page") {
-        document.querySelector("body").innerHTML = cartTemplate();
+        document.querySelector("body").innerHTML = cartTemplate({cart: getCartFromLocalStorage(), total: 20, subtotal: 10 });
 
     } else if (urlPath.startsWith("#/products/")) {
         productsPage.renderProduct(urlPath);

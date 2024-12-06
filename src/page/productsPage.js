@@ -12,7 +12,7 @@ async function renderProduct(urlPath) {
         formatPrice: formatPrice,
         partials
     });
-    buttonAddToShoppingCart();
+    buttonAddToShoppingCart(json);
 }
 
 export default { renderProduct: renderProduct }
@@ -21,9 +21,9 @@ function formatPrice(num) {
     return num.toFixed(2)
 }
 
-function buttonAddToShoppingCart() {
+function buttonAddToShoppingCart(product) {
     const addToCartButton = document.querySelector(".add-to-cart-button");
     addToCartButton.addEventListener("click", () => {
-        addProductToShoppingCart();
+        addProductToShoppingCart(product);
     })
 }
