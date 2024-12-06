@@ -1,6 +1,8 @@
 import "./styles.css";
 import "./style/footer.css";
 import "./style/productDetails.css";
+import "./style/navbar.css";
+import "./style/checkout.css";
 import "./style/shoppingCartPage.css"
 
 
@@ -29,7 +31,7 @@ window.addEventListener("popstate", () => {
 
 function renderPage(urlPath) {
     if (urlPath == "#/cart-page") {
-        document.querySelector("body").innerHTML = cartTemplate({cart: getCartFromLocalStorage(), total: 20, subtotal: 10 });
+        document.querySelector("body").innerHTML = cartTemplate({partials, cart:[]});
 
     } else if (urlPath.startsWith("#/products/")) {
         productsPage.renderProduct(urlPath);
