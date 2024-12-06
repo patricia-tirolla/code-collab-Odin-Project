@@ -2,6 +2,7 @@ import "./styles.css";
 import "./style/footer.css";
 import "./style/productDetails.css";
 import "./style/navbar.css";
+import "./style/checkout.css";
 
 
 import { productList } from "./productList";
@@ -28,7 +29,7 @@ window.addEventListener("popstate", () => {
 
 function renderPage(urlPath) {
     if (urlPath == "#/cart-page") {
-        document.querySelector("body").innerHTML = cartTemplate();
+        document.querySelector("body").innerHTML = cartTemplate({partials, cart:[]});
 
     } else if (urlPath.startsWith("#/products/")) {
         productsPage.renderProduct(urlPath);
