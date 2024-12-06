@@ -1,6 +1,7 @@
 import "./styles.css";
 import "./style/footer.css";
 import "./style/productDetails.css";
+import "./style/navbar.css";
 
 
 import { productList } from "./productList";
