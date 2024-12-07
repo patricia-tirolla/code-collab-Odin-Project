@@ -18,7 +18,6 @@ const createProductList = productList(
   "product-list-template"
 );
 
-
 // ------- function and event to render the pages
 window.addEventListener("popstate", () => {
   renderPage(window.location.hash);
@@ -33,14 +32,19 @@ function renderPage(urlPath) {
   } else if (urlPath.startsWith("#/products/")) {
     productsPage.renderProduct(urlPath);
   } else {
+    const category = "All";
     document.querySelector("body").innerHTML = homeTemplate({
       partials,
       images,
     });
-    
-    createProductList.renderButtons("https://fakestoreapi.com/products?limit=20");
-    createProductList.displayData("https://fakestoreapi.com/products?limit=20", "All")
 
+    createProductList.renderButtons(
+      "https://fakestoreapi.com/products?limit=20"
+    );
+    createProductList.displayData(
+      "https://fakestoreapi.com/products?limit=20",
+      "All"
+    );
   }
 }
 renderPage(window.location.hash);

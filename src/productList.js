@@ -103,8 +103,13 @@ export const productList = (containerId, templateId) => {
       categoryButton.textContent = category;
       buttonContainer.appendChild(categoryButton);
 
-      categoryButton.addEventListener("click", () => {
+      categoryButton.addEventListener("click", (e) => {
         displayData(url, category);
+        const buttonCategory = e.target.textContent
+        console.log("button click category:", buttonCategory)
+        
+        const h1 = document.getElementById("category-h1")
+        h1.textContent = `${buttonCategory}`
       });
     });
   };
