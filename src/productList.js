@@ -1,7 +1,6 @@
-import "./productList.css"
+import "./productList.css";
 
 export const productList = (containerId, templateId) => {
-  
 
   const fetchData = async (url) => {
     try {
@@ -30,18 +29,28 @@ export const productList = (containerId, templateId) => {
   };
 
   const handleAddButtonClick = (event) => {
-event.preventDefault()
+    event.preventDefault();
+    console.log("item added to cart");
+  };
 
-console.log("item added to cart")
-  }
-  const displayData = async (url) => {
+
+
+
+  const displayData = async (url, category) => {
     const productSection = document.getElementById(containerId);
-
+    productSection.innerHTML = "";
 
     const data = await fetchData(url);
     console.log("data from fetch:", data);
 
-    data.forEach((product) => {
+    const filteredData =
+      category === "All"
+        ? data
+        : data.filter((item) => item.category === category);
+    console.log("filtered data:", filteredData);
+
+    //render the product card
+    filteredData.forEach((product) => {
       const template = document.getElementById(templateId);
       const clone = template.content.cloneNode(true);
 
@@ -68,18 +77,41 @@ console.log("item added to cart")
       const addButton = clone.querySelector(".add-button");
       addButton.textContent = addButton.textContent.toUpperCase();
 
-      addButton.addEventListener("click", handleAddButtonClick)
+      addButton.addEventListener("click", handleAddButtonClick);
 
       productSection.appendChild(clone);
     });
   };
 
+  const renderButtons = async (url) => {
+    const buttonContainer = document.getElementById("button-container");
 
+    const data = await fetchData(url);
+    console.log("data from fetch:", data);
 
+    const categories = data.map((item) => item.category);
+    console.log("category:", categories);
 
-  
+    const uniqueCategories = ["All", ...new Set(categories)];
+    console.log("unique categories:", uniqueCategories);
+
+    // render the category buttons
+    uniqueCategories.forEach((category) => {
+      const categoryButton = document.createElement("button");
+      categoryButton.classList.toggle("category-button");
+      categoryButton.setAttribute("data-category", category);
+
+      categoryButton.textContent = category;
+      buttonContainer.appendChild(categoryButton);
+
+      categoryButton.addEventListener("click", () => {
+        displayData(url, category);
+      });
+    });
+  };
 
   return {
     displayData,
+    renderButtons,
   };
 };
