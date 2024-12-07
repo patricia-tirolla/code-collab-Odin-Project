@@ -1,7 +1,6 @@
 import "./productList.css";
 
 export const productList = (containerId, templateId) => {
-
   const fetchData = async (url) => {
     try {
       const response = await fetch(url);
@@ -33,8 +32,13 @@ export const productList = (containerId, templateId) => {
     console.log("item added to cart");
   };
 
-
-
+  const filterData = (data, category) => {
+    if (category === "All") {
+      return data;
+    } else {
+      return data.filter((item) => item.category === category);
+    }
+  };
 
   const displayData = async (url, category) => {
     const productSection = document.getElementById(containerId);
@@ -43,12 +47,7 @@ export const productList = (containerId, templateId) => {
     const data = await fetchData(url);
     console.log("data from fetch:", data);
 
-    const filteredData =
-      category === "All"
-        ? data
-        : data.filter((item) => item.category === category);
-    console.log("filtered data:", filteredData);
-
+    const filteredData = filterData(data, category);
     //render the product card
     filteredData.forEach((product) => {
       const template = document.getElementById(templateId);

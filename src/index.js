@@ -37,7 +37,9 @@ function renderPage(urlPath) {
       partials,
       images,
     });
+    
     createProductList.renderButtons("https://fakestoreapi.com/products?limit=20");
+    createProductList.displayData("https://fakestoreapi.com/products?limit=20", "All")
 
   }
 }
