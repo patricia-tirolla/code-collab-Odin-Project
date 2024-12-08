@@ -7,7 +7,9 @@ export function getCartFromLocalStorage() {
 }
 
 export function addProductToShoppingCart(product) {
+ 
     let shoppingCart = getCartFromLocalStorage();
+
     shoppingCart.push(product);
     console.log("it's added to cart!", shoppingCart)
     localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
@@ -20,5 +22,4 @@ export function removeProductFromShoppingCart(productId) {
 
 export function sumCart() {
     getCartFromLocalStorage()
-    
 }
