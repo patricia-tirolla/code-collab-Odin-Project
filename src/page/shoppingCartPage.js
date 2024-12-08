@@ -1,5 +1,6 @@
 import cartTemplate from "../template/cart.ejs";
 import partials from "../partials";
+import { showCheckoutModal } from "../checkoutDialog";
 
 function getCartFromLocalStorage() {
     const cart = localStorage.getItem("shoppingCart");
@@ -64,7 +65,7 @@ function sumCartItems() {
     }
 };
 
-const cartTotals = sumCartItems();
+export const cartTotals = sumCartItems();
 
 export function loadCartPage() {
     document.querySelector("body").innerHTML = cartTemplate({
@@ -73,4 +74,6 @@ export function loadCartPage() {
         total: cartTotals.total()});
 
     removeItemFromCartButton();
+    showCheckoutModal();
+    
 };
