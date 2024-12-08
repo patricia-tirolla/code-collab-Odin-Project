@@ -12,8 +12,8 @@
                 <tr>
                     <th>Product</th>
                     <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Subtotal</th>
+                    <!-- <th>Quantity</th>
+                    <th>Subtotal</th> -->
                     <th>Remove</th>
                 </tr>
             </thead>
@@ -28,7 +28,7 @@
                             </span>
                         <td>$<%= item.price.toFixed(2) %>
                         </td>
-                        <td>
+                        <!-- <td>
                             <button class="quantity-btn decrease" data-index="<%= index %>">-</button>
                             <span class="quantity">
                                 <%= item.quantity %>
@@ -36,8 +36,8 @@
                             <button class="quantity-btn increase" data-index="<%= index %>">*</button>
                         </td>
                         <td>$<%= (item.price * item.quantity). toFixed(2) %>
-                        </td>
-                        <td><button class="remove-item-btn" data-index=" %= index %>">Remove</button></td>
+                        </td> -->
+                        <td><button class="remove-item-btn" data-index="<%= index %>">Remove</button></td>
                         </tr>
                         <% }); %>
                 <% } else { %>
@@ -53,16 +53,15 @@
         <table>
             <tr>
                 <td>Subtotal:</td>
-                <td>$<%= subtotal.toFixed(2) %>
+                <td>$<%= subtotal %>
                 </td>
             </tr>
             <tr>
                 <td>Total: </td>
-                <td>$<%= total.toFixed(2) %>
+                <td>$<%= total %>
                 </td>
             </tr>
         </table>
         <button class="checkout-btn">Proceed to Checkout</button>
     </div>
 </div>
-<!-- <script src="./cart.js"></script> -->
