@@ -98,18 +98,22 @@ export const productList = (containerId, templateId) => {
     uniqueCategories.forEach((category) => {
       const categoryButton = document.createElement("button");
       categoryButton.classList.toggle("category-button");
+      const uppercase = category.slice(0, 1).toUpperCase();
+      console.log(uppercase);
+      const newWord = uppercase + category.slice(1);
+      console.log(newWord);
       categoryButton.setAttribute("data-category", category);
 
-      categoryButton.textContent = category;
+      categoryButton.textContent = newWord;
       buttonContainer.appendChild(categoryButton);
 
       categoryButton.addEventListener("click", (e) => {
         displayData(url, category);
-        const buttonCategory = e.target.textContent
-        console.log("button click category:", buttonCategory)
-        
-        const h1 = document.getElementById("category-h1")
-        h1.textContent = `${buttonCategory}`
+        const buttonCategory = e.target.textContent;
+        console.log("button click category:", buttonCategory);
+
+        const h1 = document.getElementById("category-h1");
+        h1.textContent = `${buttonCategory}`;
       });
     });
   };
