@@ -6,6 +6,9 @@ import { addProductToShoppingCart } from "./shoppingCartPage";
 async function renderProduct(urlPath) {
     let productId = urlPath.substring("#/products/".length)
     let res = await fetch('https://fakestoreapi.com/products/' + productId);
+    if (!res.ok) {
+        throw new Error("Unable to fetch product: server responded with " + res.status)
+    }
     let json = await res.json();
 
     document.querySelector("body").innerHTML = productTemplate({

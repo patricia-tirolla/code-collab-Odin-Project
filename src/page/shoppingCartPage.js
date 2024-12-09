@@ -3,7 +3,7 @@ import partials from "../partials";
 import { showCheckoutModal } from "../checkoutDialog";
 import images from "../images"
 
-function getCartFromLocalStorage() {
+export function getCartFromLocalStorage() {
     const cart = localStorage.getItem("shoppingCart");
     if (cart === null) {
         return [];
