@@ -1,0 +1,157 @@
+<dialog class="checkout-container">
+  <h1>Checkout</h1>
+  <a href="#/cart-page">Go back to your cart</a>
+  <form action="/submit-order" method="POST">
+    <!-- Customer Information -->
+    <section class="checkout-customer-information">
+      <h2>Customer Information</h2>
+      <label for="email">Username or Email Address *</label>
+      <input type="email" id="email" name="email" placeholder="youremail@example.com" required>
+    </section>
+
+    <!-- Billing Details -->
+    <section id="checkout-billing-details">
+      <h2>Billing Details</h2>
+      <label for="first-name">First Name *</label>
+      <input type="text" id="first-name" name="firstName" placeholder="First Name" required>
+
+      <label for="last-name">Last Name *</label>
+      <input type="text" id="last-name" name="lastName" placeholder="Last Name" required>
+
+      <label for="company-name">Company Name (optional)</label>
+      <input type="text" id="company-name" name="companyName" placeholder="Company Name">
+
+      <label for="country">Country / Region *</label>
+      <select id="country" name="countries" required>
+        <option value="Albania">Albania</option>
+        <option value="Andorra">Andorra</option>
+        <option value="Armenia">Armenia</option>
+        <option value="Austria">Austria</option>
+        <option value="Azerbaijan">Azerbaijan</option>
+        <option value="Belarus">Belarus</option>
+        <option value="Belgium">Belgium</option>
+        <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+        <option value="Bulgaria">Bulgaria</option>
+        <option value="Croatia">Croatia</option>
+        <option value="Cyprus">Cyprus</option>
+        <option value="Czech Republic">Czech Republic</option>
+        <option value="Denmark">Denmark</option>
+        <option value="Estonia">Estonia</option>
+        <option value="Finland">Finland</option>
+        <option value="France">France</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Germany">Germany</option>
+        <option value="Greece">Greece</option>
+        <option value="Hungary">Hungary</option>
+        <option value="Iceland">Iceland</option>
+        <option value="Ireland">Ireland</option>
+        <option value="Italy">Italy</option>
+        <option value="Kazakhstan">Kazakhstan</option>
+        <option value="Kosovo">Kosovo</option>
+        <option value="Latvia">Latvia</option>
+        <option value="Liechtenstein">Liechtenstein</option>
+        <option value="Lithuania">Lithuania</option>
+        <option value="Luxembourg">Luxembourg</option>
+        <option value="Malta">Malta</option>
+        <option value="Moldova">Moldova</option>
+        <option value="Monaco">Monaco</option>
+        <option value="Montenegro">Montenegro</option>
+        <option value="Netherlands">Netherlands</option>
+        <option value="North Macedonia">North Macedonia</option>
+        <option value="Norway">Norway</option>
+        <option value="Poland">Poland</option>
+        <option value="Portugal">Portugal</option>
+        <option value="Romania">Romania</option>
+        <option value="San Marino">San Marino</option>
+        <option value="Serbia">Serbia</option>
+        <option value="Slovakia">Slovakia</option>
+        <option value="Slovenia">Slovenia</option>
+        <option value="Spain">Spain</option>
+        <option value="Sweden">Sweden</option>
+        <option value="Switzerland">Switzerland</option>
+        <option value="Turkey">Turkey</option>
+        <option value="Ukraine">Ukraine</option>
+        <option value="United Kingdom">United Kingdom</option>
+        <option value="Vatican City">Vatican City</option>
+      </select>
+
+      <label for="street-address">Street Address *</label>
+      <input type="text" id="street-address" name="streetAddress" placeholder="Street Address" required>
+
+      <label for="apartment">Apartment, suite, unit, etc. (optional)</label>
+      <input type="text" id="apartment" name="apartment" placeholder="Apartment, suite, unit, etc.">
+
+      <label for="postcode">Postcode / ZIP *</label>
+      <input type="text" id="postcode" name="postcode" placeholder="ZIP Code" required>
+
+      <label for="city">Town / City *</label>
+      <input type="text" id="city" name="city" placeholder="City" required>
+
+      <label for="phone">Phone *</label>
+      <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+    </section>
+
+    <!-- Additional Information -->
+    <section>
+      <h2>Additional Information</h2>
+      <label for="notes">Order Notes (optional)</label>
+      <textarea id="notes" name="notes"
+        placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+    </section>
+
+    <!-- Order Summary -->
+    <section>
+      <h2>Your Order</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% cart.forEach(item=> { %>
+            <tr>
+              <td>
+                <%= item.title %>
+              </td>
+              <td>$<%= item.price %>
+              </td>
+            </tr>
+            <% }); %>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Subtotal</td>
+            <td>$<%= subtotal %>
+            </td>
+          </tr>
+          <tr>
+            <td>Total</td>
+            <td>$<%= total %>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <!-- Payment -->
+    <section>
+      <h2>Payment</h2>
+      <div>
+        <input type="radio" id="bank-transfer" name="paymentMethod" value="bank-transfer" checked>
+        <label for="bank-transfer">Direct Bank Transfer</label>
+        <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your
+          order will not be shipped until the funds have cleared in our account.</p>
+      </div>
+      <div>
+        <input type="radio" id="cash-on-delivery" name="paymentMethod" value="cash-on-delivery">
+        <label for="cash-on-delivery">Cash on Delivery</label>
+      </div>
+    </section>
+
+    <!-- Submit Button -->
+    <button type="submit">Place Order $<%= cart.reduce((total, item)=> total + (item.price * item.quantity), 0)
+        %></button>
+  </form>
+</dialog>
