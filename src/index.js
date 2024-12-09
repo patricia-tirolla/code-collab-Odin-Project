@@ -3,6 +3,8 @@ import "./style/footer.css";
 import "./style/productDetails.css";
 import "./style/navbar.css";
 import "./style/checkout.css";
+import "./style/shoppingCartPage.css";
+
 
 import { productList } from "./productList";
 import productsPage from "./page/productsPage";
