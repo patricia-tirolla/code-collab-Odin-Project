@@ -1,6 +1,12 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
+let baseURL = '/'
+
+
+if (process.env.NODE_ENV === 'production') {
+  baseURL = '/code-collab-Odin-Project/'
+}
 
 module.exports = {
   mode: "development",
@@ -17,6 +23,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/template.html",
+      base: baseURL,
     }),
     new webpack.ProvidePlugin({
       _: "underscore",

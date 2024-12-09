@@ -6,9 +6,9 @@ import "./style/checkout.css";
 
 import { productList } from "./productList";
 import productsPage from "./page/productsPage";
+import { loadCartPage} from "./page/shoppingCartPage";
 
 import homeTemplate from "./template/home.ejs";
-import cartTemplate from "./template/cart.ejs";
 
 import partials from "./partials";
 import images from "./images";
