@@ -20,5 +20,4 @@ export default {
     twitter,
     youtube, 
     shoppingcartadd
-
-}
+    }

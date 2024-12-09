@@ -1,5 +1,6 @@
 import productTemplate from "../template/product.ejs";
 import partials from "../partials"
+import images from "../images"
 import { addProductToShoppingCart } from "./shoppingCartPage";
 
 async function renderProduct(urlPath) {
@@ -10,7 +11,8 @@ async function renderProduct(urlPath) {
     document.querySelector("body").innerHTML = productTemplate({
         product: json,
         formatPrice,
-        partials
+        partials,
+        images
     });
     buttonAddToShoppingCart(json);
 }
