@@ -24,27 +24,24 @@ window.addEventListener("popstate", () => {
 });
 
 function renderPage(urlPath) {
-  if (urlPath == "#/cart-page") {
-    document.querySelector("body").innerHTML = cartTemplate({
-      partials,
-      cart: [],
-    });
-  } else if (urlPath.startsWith("#/products/")) {
-    productsPage.renderProduct(urlPath);
-  } else {
-    const category = "All";
-    document.querySelector("body").innerHTML = homeTemplate({
-      partials,
-      images,
-    });
-
-    createProductList.renderButtons(
-      "https://fakestoreapi.com/products?limit=20"
-    );
-    createProductList.displayData(
-      "https://fakestoreapi.com/products?limit=20",
-      "All"
-    );
-  }
-}
+    if (urlPath == "#/cart-page") {
+        loadCartPage();
+      } else if (urlPath.startsWith("#/products/")) {
+        productsPage.renderProduct(urlPath);
+      } else {
+        const category = "All";
+        document.querySelector("body").innerHTML = homeTemplate({
+          partials,
+          images,
+        });
+    
+        createProductList.renderButtons(
+          "https://fakestoreapi.com/products?limit=20"
+        );
+        createProductList.displayData(
+          "https://fakestoreapi.com/products?limit=20",
+          "All"
+        );
+      }
+    }
 renderPage(window.location.hash);
