@@ -9,7 +9,7 @@ async function renderProduct(urlPath) {
 
     document.querySelector("body").innerHTML = productTemplate({
         product: json,
-        formatPrice: formatPrice,
+        formatPrice,
         partials
     });
     buttonAddToShoppingCart(json);
