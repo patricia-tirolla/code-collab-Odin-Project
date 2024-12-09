@@ -12,12 +12,12 @@ body {
 body {
   margin: 0px;
   padding: 0px;
-  /* overflow: hidden; */
 }
 .Nav-Bar {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
   background-color: var(--background-light);
   margin: 0px;
   padding: 0px;
@@ -58,7 +58,7 @@ body {
     background-color: #fddc9b;
   }
   50% {
-    transform: translateX(calc(100vw - 100px));
+    transform: translateX(calc(100vw - 180px));
     background-color: #ff7b00;
   }
   100% {
@@ -71,3 +71,77 @@ body {
     display: none;
   }
 }
+
+/* body {
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+}
+:root {
+  --text-color-light: #555;
+
+  --background-light: #f1f2f2;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  /* overflow: hidden; */
+/* } */
+/* .Nav-Bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--background-light);
+  margin: 0px;
+  padding: 0px;
+}
+.Nav-logo {
+  margin-left: 20px;
+  margin-top: 1px;
+}
+.Nav-Img img {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.Nav-link a {
+  text-decoration: none;
+  color: var(--text-color-light);
+
+  margin-right: 25px;
+}
+.Nav-link {
+  margin-top: 25px;
+  margin-right: 70px;
+}
+.box {
+  width: 170px;
+  height: 5px; */
+/* background-color: rgb(195, 124, 42); */
+/* border-radius: 5px;
+  position: absolute;
+  animation: moveBox 20s ease-in-out infinite;
+}
+
+@keyframes moveBox {
+  0% {
+    transform: translateX(0);
+    background-color: #fddc9b;
+  }
+  50% {
+    transform: translateX(calc(100vw - 100px));
+    background-color: #ff7b00;
+  }
+  100% {
+    transform: translateX(0);
+    background-color: #fddc9b;
+  }
+}
+@media (max-width: 510px) {
+  .Nav-link {
+    display: none;
+  }
+} */
