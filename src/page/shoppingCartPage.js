@@ -1,6 +1,7 @@
 import cartTemplate from "../template/cart.ejs";
 import partials from "../partials";
 import { showCheckoutModal } from "../checkoutDialog";
+import images from "../images"
 
 function getCartFromLocalStorage() {
     const cart = localStorage.getItem("shoppingCart");
@@ -71,7 +72,9 @@ export function loadCartPage() {
     document.querySelector("body").innerHTML = cartTemplate({
         partials, cart: getCartFromLocalStorage(), 
         subtotal: cartTotals.subtotal(), 
-        total: cartTotals.total()});
+        total: cartTotals.total(),
+        images
+    });
 
     removeItemFromCartButton();
     showCheckoutModal();
