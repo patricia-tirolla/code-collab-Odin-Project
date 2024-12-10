@@ -1,4 +1,4 @@
-import { cartTotals, getCartFromLocalStorage, addProductToShoppingCart, removeProductFromShoppingCart} from '../src/page/shoppingCartPage'
+import { cartTotals, getCartFromLocalStorage, addProductToShoppingCart, removeProductFromShoppingCart } from '../src/page/shoppingCartPage'
 
 describe('sumProductsInTheCart function', () => {
     test('should return 0 when the price list is empty', () => {

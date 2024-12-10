@@ -1,5 +1,3 @@
-import { renderPage } from ".";
-
 export function showCheckoutModal() {
     const proceedToCheckoutButton = document.querySelector(".checkout-btn");
     const checkoutModal = document.querySelector(".checkout-container");
@@ -14,7 +12,7 @@ export function submitCheckout() {
             e.preventDefault();
             alert("Your order is placed!")
             localStorage.clear();
-            renderPage("#/")
+            window.location.replace("#/");
         }
     })
 }
