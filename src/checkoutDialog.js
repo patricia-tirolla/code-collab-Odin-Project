@@ -1,4 +1,4 @@
-import { loadCartPage } from "./page/shoppingCartPage";
+import { renderPage } from ".";
 
 export function showCheckoutModal() {
     const proceedToCheckoutButton = document.querySelector(".checkout-btn");
@@ -13,7 +13,7 @@ export function submitCheckout() {
         if (e.target.matches(".place-order-button")) {
             e.preventDefault();
             localStorage.clear();
-            loadCartPage();
+            renderPage("#/")
         }
     })
 }
