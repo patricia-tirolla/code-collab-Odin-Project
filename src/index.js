@@ -26,7 +26,7 @@ window.addEventListener("popstate", () => {
   renderPage(window.location.hash);
 });
 
-function renderPage(urlPath) {
+export function renderPage(urlPath) {
     if (urlPath == "#/cart-page") {
         loadCartPage();
       } else if (urlPath.startsWith("#/products/")) {

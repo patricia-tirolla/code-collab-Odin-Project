@@ -13,3 +13,13 @@
   --color-nude: #c19a83;
   --font-main: "Oswald", serif;
 }
+
+button {
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--color-nude);
+}

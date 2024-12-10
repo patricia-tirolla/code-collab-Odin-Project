@@ -20,15 +20,23 @@ async function renderProduct(urlPath) {
     buttonAddToShoppingCart(json);
 }
 
-export default { renderProduct: renderProduct }
-
 function formatPrice(num) {
     return num.toFixed(2)
 }
 
 export function buttonAddToShoppingCart(product) {
     const addToCartButton = document.querySelector(".add-to-cart-button");
+    const alertBox = document.getElementById("alert-box");
+    const alertCloseButton = document.querySelector(".alert-close-button");
+
     addToCartButton.addEventListener("click", () => {
         addProductToShoppingCart(product);
-    })
+
+        alertBox.classList.remove("hidden");
+        alertCloseButton.addEventListener("click", () => {
+            alertBox.classList.add("hidden");
+        });
+    });
 }
+
+export default { renderProduct: renderProduct }
