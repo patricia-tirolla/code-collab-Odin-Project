@@ -5,14 +5,11 @@ import "./style/navbar.css";
 import "./style/checkout.css";
 import "./style/shoppingCartPage.css";
 
+import homeTemplate from "./template/home.ejs";
 
 import { productList } from "./productList";
 import productsPage from "./page/productsPage";
 import { loadCartPage} from "./page/shoppingCartPage";
-
-
-import homeTemplate from "./template/home.ejs";
-
 import partials from "./partials";
 import images from "./images";
 

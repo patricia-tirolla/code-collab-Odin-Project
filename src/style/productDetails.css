@@ -1,3 +1,9 @@
+.home-link {
+    display: flex;
+    justify-content: left;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
 
 .product-detail-body {
     display: flex;

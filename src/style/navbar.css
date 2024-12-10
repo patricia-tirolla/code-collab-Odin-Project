@@ -20,7 +20,7 @@ body {
   align-items: center;
   background-color: var(--background-light);
   margin: 0px;
-  padding: 0px;
+  padding: 20px;
 }
 .Nav-logo {
   margin-left: 20px;
