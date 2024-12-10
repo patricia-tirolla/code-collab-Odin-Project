@@ -6,3 +6,10 @@
   margin: 0;
 }
 
+:root {
+  --color-lt-gray: #f1f2f2;
+  --color-dk-gray: #54595f;
+  --color-white: #fafafa;
+  --color-nude: #c19a83;
+  --font-main: "Oswald", serif;
+}

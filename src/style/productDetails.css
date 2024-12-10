@@ -1,8 +1,10 @@
+
 .product-detail-body {
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
+    padding-top: 20px;
 }
 
 .product-display-container {
@@ -32,4 +34,14 @@
 }
 .product-detail-description {
     font-size: 0.8rem;
+}
+
+.add-to-cart-button {
+    margin-top: auto;
+    width: fit-content;
+    border: none;
+    background-color: var(--color-dk-gray);
+    color: white;
+    align-self: center;
+    padding: 10px 20px;
 }

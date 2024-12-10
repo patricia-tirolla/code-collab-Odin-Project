@@ -6,14 +6,6 @@
   margin: 0;
 }
 
-:root {
-  --color-lt-gray: #f1f2f2;
-  --color-dk-gray: #54595f;
-  --color-white: #fafafa;
-  --color-nude: #c19a83;
-  --font-main: "Oswald", serif;
-}
-
 body {
   background-color: var(--color-white);
   font-family: var(--font-main);
@@ -149,6 +141,7 @@ body {
   align-self: center;
   padding: 10px 20px;
 }
+
 @media (max-width: 767px) {
   #product-container {
     grid-template-columns: repeat(2, minmax(0, 1fr));

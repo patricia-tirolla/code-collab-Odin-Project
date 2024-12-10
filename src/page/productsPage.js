@@ -26,7 +26,7 @@ function formatPrice(num) {
     return num.toFixed(2)
 }
 
-function buttonAddToShoppingCart(product) {
+export function buttonAddToShoppingCart(product) {
     const addToCartButton = document.querySelector(".add-to-cart-button");
     addToCartButton.addEventListener("click", () => {
         addProductToShoppingCart(product);
