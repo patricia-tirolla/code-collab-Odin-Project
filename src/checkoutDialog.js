@@ -12,6 +12,7 @@ export function submitCheckout() {
     document.addEventListener("click", (e) => {
         if (e.target.matches(".place-order-button")) {
             e.preventDefault();
+            alert("Your order is placed!")
             localStorage.clear();
             renderPage("#/")
         }
