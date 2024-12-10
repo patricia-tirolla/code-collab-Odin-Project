@@ -14,7 +14,6 @@ describe('sumProductsInTheCart function', () => {
     test('should handle decimals price', () => {
         const priceList = [30.30, 50.50, 20.20];
         const result = cartTotals.sumProductsInTheCart(priceList);
-        console.log('Actual result:', result);
         expect(result).toBe(101.00);
     });
     test('should handle a list with one price', () => {
