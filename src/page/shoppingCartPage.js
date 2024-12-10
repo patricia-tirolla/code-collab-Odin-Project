@@ -1,6 +1,6 @@
 import cartTemplate from "../template/cart.ejs";
 import partials from "../partials";
-import { showCheckoutModal } from "../checkoutDialog";
+import { showCheckoutModal, submitCheckout } from "../checkoutDialog";
 import images from "../images"
 
 export function getCartFromLocalStorage() {
@@ -78,5 +78,5 @@ export function loadCartPage() {
 
     removeItemFromCartButton();
     showCheckoutModal();
-    
+    submitCheckout();
 };

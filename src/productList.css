@@ -149,6 +149,12 @@ body {
   align-self: center;
   padding: 10px 20px;
 }
+
+.add-button:hover {
+  cursor: pointer;
+  background-color: var(--color-nude);
+}
+
 @media (max-width: 767px) {
   #product-container {
     grid-template-columns: repeat(2, minmax(0, 1fr));

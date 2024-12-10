@@ -1,3 +1,4 @@
+import { renderPage } from ".";
 
 export function showCheckoutModal() {
     const proceedToCheckoutButton = document.querySelector(".checkout-btn");
@@ -6,3 +7,13 @@ export function showCheckoutModal() {
         checkoutModal.show();
     })
 };
+
+export function submitCheckout() {
+    document.addEventListener("click", (e) => {
+        if (e.target.matches(".place-order-button")) {
+            e.preventDefault();
+            localStorage.clear();
+            renderPage("#/")
+        }
+    })
+}

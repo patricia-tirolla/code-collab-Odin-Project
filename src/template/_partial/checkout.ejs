@@ -1,7 +1,7 @@
 <dialog class="checkout-container">
   <h1>Checkout</h1>
   <a href="#/cart-page">Go back to your cart</a>
-  <form action="/submit-order" method="POST">
+  <form>
     <!-- Customer Information -->
     <section class="checkout-customer-information">
       <h2>Customer Information</h2>
@@ -151,7 +151,6 @@
     </section>
 
     <!-- Submit Button -->
-    <button type="submit">Place Order $<%= cart.reduce((total, item)=> total + (item.price * item.quantity), 0)
-        %></button>
+    <button class="place-order-button" type="submit">Place Order $<%= total %></button>
   </form>
 </dialog>
