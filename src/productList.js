@@ -1,4 +1,23 @@
 import "./productList.css";
+export const formatPrice = (num) => {
+  return num.toFixed(2);
+};
+
+export const formatLength = (str) => {
+  if (str.length <= 100) {
+    return str;
+  } else {
+    return str.slice(0, 100) + "...";
+  }
+};
+
+export const filterData = (data, category) => {
+  if (category === "All") {
+    return data;
+  } else {
+    return data.filter((item) => item.category === category);
+  }
+};
 
 export const productList = (containerId, templateId) => {
   const fetchData = async (url) => {
@@ -15,25 +34,25 @@ export const productList = (containerId, templateId) => {
     }
   };
 
-  const formatPrice = (num) => {
-    return num.toFixed(2);
-  };
+  // const formatPrice = (num) => {
+  //   return num.toFixed(2);
+  // };
 
-  const formatLength = (str) => {
-    if (str.length <= 100) {
-      return str;
-    } else {
-      return str.slice(0, 100) + "...";
-    }
-  };
+  // const formatLength = (str) => {
+  //   if (str.length <= 100) {
+  //     return str;
+  //   } else {
+  //     return str.slice(0, 100) + "...";
+  //   }
+  // };
 
-  const filterData = (data, category) => {
-    if (category === "All") {
-      return data;
-    } else {
-      return data.filter((item) => item.category === category);
-    }
-  };
+  // const filterData = (data, category) => {
+  //   if (category === "All") {
+  //     return data;
+  //   } else {
+  //     return data.filter((item) => item.category === category);
+  //   }
+  // };
 
   const displayData = async (url, category) => {
     const productSection = document.getElementById(containerId);
