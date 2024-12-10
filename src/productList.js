@@ -27,11 +27,6 @@ export const productList = (containerId, templateId) => {
     }
   };
 
-  const handleAddButtonClick = (event) => {
-    event.preventDefault();
-    console.log("item added to cart");
-  };
-
   const filterData = (data, category) => {
     if (category === "All") {
       return data;
@@ -72,12 +67,6 @@ export const productList = (containerId, templateId) => {
       const formattedPrice = formatPrice(number);
 
       productPrice.textContent = `$${formattedPrice}`;
-
-      const addButton = clone.querySelector(".add-button");
-      addButton.textContent = addButton.textContent.toUpperCase();
-
-      addButton.addEventListener("click", handleAddButtonClick);
-
       productSection.appendChild(clone);
     });
   };

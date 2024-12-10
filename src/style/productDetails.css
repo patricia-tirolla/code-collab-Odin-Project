@@ -1,8 +1,10 @@
+
 .product-detail-body {
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
+    padding-top: 20px;
 }
 
 .product-display-container {

@@ -6,14 +6,6 @@
   margin: 0;
 }
 
-:root {
-  --color-lt-gray: #f1f2f2;
-  --color-dk-gray: #54595f;
-  --color-white: #fafafa;
-  --color-nude: #c19a83;
-  --font-main: "Oswald", serif;
-}
-
 body {
   background-color: var(--color-white);
   font-family: var(--font-main);
@@ -148,11 +140,6 @@ body {
   color: white;
   align-self: center;
   padding: 10px 20px;
-}
-
-.add-button:hover {
-  cursor: pointer;
-  background-color: var(--color-nude);
 }
 
 @media (max-width: 767px) {
