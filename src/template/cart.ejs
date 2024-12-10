@@ -10,8 +10,6 @@
                 <tr>
                     <th>Product</th>
                     <th>Price</th>
-                    <!--<th>Quantity</th>
-                   <th>Subtotal</th> -->
                     <th>Remove</th>
                 </tr>
             </thead>
@@ -26,15 +24,6 @@
                             </span>
                         <td>$<%= item.price.toFixed(2) %>
                         </td>
-                        <!--<td>
-                            <button class="quantity-btn decrease" data-index="<%= index %>">-</button>
-                            <span class="quantity">
-                                <%= item.quantity %>
-                            </span>
-                            <button class="quantity-btn increase" data-index="<%= index %>">*</button>
-                        </td>
-                        <!--<td>$<%= (item.price * item.quantity). toFixed(2) %>
-                        </td> -->
                         <td><button class="remove-item-btn" data-index="<%= index %>">Remove</button></td>
                         </tr>
                          
